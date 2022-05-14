@@ -60,6 +60,12 @@ func ReadResponse(r io.Reader) ([]byte, error) {
 	if msgSize < 0 {
 		return nil, fmt.Errorf("response msg size is negative: %v", msgSize)
 	}
+
+	if msgSize == 1213486160 {
+		//mdw
+		return nil, fmt.Errorf("response msg size is Value(%v) = HTTP", msgSize)
+	}
+
 	// message binary data
 	buf := make([]byte, msgSize)
 	_, err = io.ReadFull(r, buf)
