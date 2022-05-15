@@ -62,8 +62,8 @@ func ReadResponse(r io.Reader) ([]byte, error) {
 	}
 
 	if msgSize == 1213486160 {
-		//mdw
-		return nil, fmt.Errorf("response msg size is Value(%v) = HTTP", msgSize)
+		//mdw modify ConnectToNSQD(":4161") Fatal
+		return nil, fmt.Errorf("response msg is HTTP(%v), Port Error", msgSize)
 	}
 
 	// message binary data
